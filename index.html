@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empregue.ses</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+    intent="WELCOME"
+    chat-title="teste02"
+    agent-id="a6efa7c4-227c-4362-8f55-04d53c895407"
+    language-code="en"
+    ></df-messenger>
+</head>
+<body>
+    <header>Empregue.se</header>
+
+    <!--inpirado no linkedin-->
+    <div class="perfil"></div>
+    <div class="circulo">
+        <img src="imagens/person.png" alt="">
+        <style scoped> 
+        img{ 
+        max-width: 100%; 
+        max-height: 100%; 
+        border-radius: 75px;
+        }
+        </style>
+    </div>
+
+    <div class="Name">
+        <input id="userN" type="text" name="Na" placeholder="Nome">
+    </div>
+    <div class="Email">
+        <input id="userE" type="text" name="Ema" placeholder="E-mail">
+    </div>
+    <div class="PassWord">
+        <input id="userP" type="text" name="Pw" placeholder="Senha">
+    </div>
+
+    <div class="test">
+        <button id="testBtn" type="submit">Test</button>
+    </div>
+
+    <!--post1-->
+    <br><div class="postSec"></div>
+
+    <!-- ~1.182 x 1.182-->
+    <br><div class="postImg"><img src="imagens/vg1.jpg" alt=""></div>
+    <div class="post">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Illum quas odit eos voluptate placeat eligendi neque, quaerat repellat adipisci dolores.
+            Minus cum quaerat dicta est qui consequatur unde numquam maiores.</h1>
+    </div>
+
+    <!--post2-->
+    <br><div class="postSec"></div>
+
+    <!-- ~1.182 x 1.182-->
+    <br><div class="postImg"><img src="imagens/vg2.jpg" alt=""></div>
+    <div class="post">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Illum quas odit eos voluptate placeat eligendi neque, quaerat repellat adipisci dolores.
+            Minus cum quaerat dicta est qui consequatur unde numquam maiores.</h1>
+    </div>
+
+    <!--post3-->
+    <br><div class="postSec"></div>
+
+    <!-- ~1.182 x 1.182-->
+    <br><div class="postImg"><img src="imagens/vg3.jpg" alt=""></div>
+    <div class="post">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Illum quas odit eos voluptate placeat eligendi neque, quaerat repellat adipisci dolores.
+            Minus cum quaerat dicta est qui consequatur unde numquam maiores.</h1>
+    </div>
+
+    <!--post4-->
+    <br><div class="postSec"></div>
+
+    <!-- ~1.182 x 1.182-->
+    <br><div class="postImg"><img src="imagens/vg4.jpg" alt=""></div>
+    <div class="post">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Illum quas odit eos voluptate placeat eligendi neque, quaerat repellat adipisci dolores.
+            Minus cum quaerat dicta est qui consequatur unde numquam maiores.</h1>
+    </div>
+
+    <script type="module">
+            
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        
+        const firebaseConfig = {
+        apiKey: "AIzaSyCzNwGGaxo0JbJpH7Ly_Jlh0pJOBa4X2WY",
+        authDomain: "empreguese-48f51.firebaseapp.com",
+        databaseURL: "https://empreguese-48f51-default-rtdb.firebaseio.com",
+        projectId: "empreguese-48f51",
+        storageBucket: "empreguese-48f51.appspot.com",
+        messagingSenderId: "995345543313",
+        appId: "1:995345543313:web:a2c6798dc899c167cd8f30",
+        measurementId: "G-RECNPRWGTW"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+         
+        import{
+            getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField
+        }
+        from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
+
+        const db = getFirestore(app);
+
+        let userN = document.getElementById("userN")
+        let userE = document.getElementById("userE")
+        let userP = document.getElementById("userP")
+
+        let testBtn = document.getElementById("testBtn")
+
+
+        async function GetADocument() {
+
+            var ref = doc(db, "user", userP.value);
+            const docSnap = await getDoc(ref);
+
+            if(docSnap.exists()){
+                userN.value = docSnap.data().Name
+                userE.value = docSnap.data().Email
+            }
+            else{
+                alert("deu não irmão")
+            }
+
+        }
+
+        testBtn.addEventListener("click", GetADocument);
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+body{
+
+    background-color: aliceblue;
+
+}
+header{
+    background-color: lightskyblue;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: consolas;
+}
+img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+
+}
+.postImg{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+
+}
+.post{
+
+    margin-left: 39.2%;
+    margin-right: 39%;
+    font-size: 7px;
+    font-family: consolas;
+}
+.postSec{
+    margin-left: 38%;
+    margin-right: 37%;
+    width: 430px;
+    height: 520px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    position: absolute;
+    border-radius: 10px;
+    background-color: a;
+}
+.circulo{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    border-style:solid;
+    border-radius:100px;
+    border-width: 1px;
+    border-color: gray;
+    margin-left: 28.6%;
+    margin-top: 3%;
+}
+.perfil{
+    width: 240px;
+    height: 400px;
+    position: absolute;
+    margin-left: 24%;
+    margin-top: 1%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: gray;
+}
+.Name{
+    position: absolute;
+    margin-left: 26%;
+    margin-top: 8%;
+}
+.Email{
+    position: absolute;
+    margin-left: 26%;
+    margin-top: 10%;
+}
+.PassWord{
+    position: absolute;
+    margin-left: 26%;
+    margin-top: 12%;
+}
+.test{
+
+    position: absolute;
+    margin-left: 29.6%;
+    margin-top: 14%;
+}
